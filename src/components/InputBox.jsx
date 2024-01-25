@@ -1,40 +1,24 @@
-import { useState } from "react";
+import { Input } from "./Input";
 
-export function InputBox() {
-  const [input, setInput] = useState({
-    initialInvestment: 10000,
-    anualInvestment: 1200,
-    expectedReturn: 6,
-    duration: 10,
-  });
-
-  function handleChange(inputIdentifier, newValue) {
-    setInput((prevInput) => {
-      return { ...prevInput, [inputIdentifier]: newValue };
-    });
-  }
-
+export function InputBox({ ...props }) {
+  // props -> userInput, onInputChange
   return (
     <section id="user-input">
       <div className="input-group">
-        <p>
-          <label>Initial Investment</label>
-          <input type="number" required />
-        </p>
-        <p>
-          <label>Anual Investment</label>
-          <input type="number" required />
-        </p>
+        <Input inputIdentifier="initialInvestment" {...props}>
+          Initial Investment
+        </Input>
+        <Input inputIdentifier="annualInvestment" {...props}>
+          Anual Investment
+        </Input>
       </div>
       <div className="input-group">
-        <p>
-          <label>Expected Return</label>
-          <input type="number" required />
-        </p>
-        <p>
-          <label>Duration</label>
-          <input type="number" required />
-        </p>
+        <Input inputIdentifier="expectedReturn" {...props}>
+          Expected Return
+        </Input>
+        <Input inputIdentifier="duration" {...props}>
+          Duration
+        </Input>
       </div>
     </section>
   );
