@@ -5,10 +5,10 @@ import { Results } from "./components/Results";
 
 function App() {
   const [userInput, setUserInput] = useState({
-    initialInvestment: 15000,
-    annualInvestment: 1200,
-    expectedReturn: 6,
-    duration: 10,
+    initialInvestment: 0,
+    annualInvestment: 0,
+    expectedReturn: 0,
+    duration: 1,
   });
 
   const inputIsValid = userInput.duration >= 1;
