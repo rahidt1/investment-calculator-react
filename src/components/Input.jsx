@@ -7,7 +7,7 @@ export function Input({ children, userInput, inputIdentifier, onInputChange }) {
         type="number"
         required
         value={userInput[inputIdentifier]}
-        onChange={(e) => onInputChange(inputIdentifier, e.target.value)}
+        onChange={(e) => onInputChange(inputIdentifier, +e.target.value)}
       />
     </p>
   );
